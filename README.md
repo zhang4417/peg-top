@@ -16,3 +16,7 @@ yarn add vue
 ~~~
 yarn global add parcel-bundler 
 ~~~
+4. 打包
+~~~
+parcel index.html --no-cache
+~~~
