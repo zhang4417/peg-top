@@ -8,12 +8,18 @@
     "vue",
     "ui"
   ],
+  "author": "zhang4417",
+  "bugs": {
+    "url": "https://github.com/zhang4417/peg-top/issues"
+  },
+  "homepage": "https://github.com/zhang4417/peg-top#readme",
   "dependencies": {
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.1.2",
+    "sass": "^1.26.3",
     "vue-template-compiler": "^2.6.11"
   },
   "alias": {
