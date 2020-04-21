@@ -30,14 +30,26 @@
         body {
             font-size: var(--font-size)
         }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <g-button />
+        <g-button>
+            <svg class="icon">
+                <use xlink:href='#i-setting'></use>
+            </svg>
+            <span>按钮</span>
+        </g-button>
     </div>
+
     <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_1771255_3g4izm3pwjd.js"></script>
 </body>
 
 </html>
