@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
+  "description": "这是一个Vue的UI框架",
+  "keywords": [
+    "vue",
+    "ui"
+  ],
   "dependencies": {
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
