@@ -1,10 +1,18 @@
 <template>
-  <button class="g-button">
-    <slot></slot>
+  <button class="g-button" :class=" {[`icon-${iconPosition}`]: icon ? true : false} ">
+    <svg class="icon" v-if="icon">
+      <use :xlink:href="`#i-${icon}`" />
+    </svg>
+    <div class="content">
+      <slot></slot>
+    </div>
   </button>
 </template>
+
 <script>
-export default {};
+export default {
+  props: ["icon", "iconPosition"]
+};
 </script>
 <style lang="scss">
 .g-button {
@@ -14,6 +22,32 @@ export default {};
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background-color: var(--button-bg);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  > .icon {
+    order: 1;
+  }
+  > .content {
+    order: 2;
+  }
+  &.icon-right {
+    > .content {
+      order: 1;
+    }
+    > .icon {
+      order: 2;
+    }
+  }
+  &.icon-left {
+    > .icon {
+      order: 1;
+    }
+    > .content {
+      order: 2;
+    }
+  }
   &:focus {
     outline: none;
   }
