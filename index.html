@@ -35,13 +35,13 @@
 
 <body>
     <div id="app">
-        <g-button :loading.sync="loading1">
+        <g-button :loading="loading1" @click="loading1=!loading1">
             <span>按钮</span>
         </g-button>
-        <g-button icon="setting" icon-position="left" :loading.sync="loading2">
+        <g-button icon="setting" icon-position="left" :loading="loading2" @click="loading2=!loading2">
             <span>按钮</span>
         </g-button>
-        <g-button icon="setting" icon-position="right" :loading.sync="loading3">
+        <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
             <span>按钮</span>
         </g-button>
         <button-group>

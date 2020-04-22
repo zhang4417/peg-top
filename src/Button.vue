@@ -2,7 +2,7 @@
   <button
     class="g-button"
     :class=" {[`icon-${iconPosition}`]: icon ? true : false} "
-    @click="$emit('update:loading',!loading)"
+    @click="$emit('click')"
   >
     <g-icon class="g-icon" :name="icon" v-if="icon && !loading"></g-icon>
     <g-icon class="loading g-icon" name="loading" v-if="loading"></g-icon>
