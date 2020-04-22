@@ -13,7 +13,9 @@
 </template>
 
 <script>
+import Icon from "./Icon.vue";
 export default {
+  components: { "g-icon": Icon },
   props: {
     icon: {},
     loading: {
