@@ -19,12 +19,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .group {
   display: inline-flex;
   vertical-align: middle;
   > .g-button {
     border-radius: 0;
+
     &:not(:first-child) {
       margin-left: -1px;
     }

@@ -1,6 +1,6 @@
 <template>
   <button
-    class="g-button zhang"
+    class="g-button"
     :class=" {[`icon-${iconPosition}`]: icon ? true : false} "
     @click="$emit('click')"
   >
@@ -32,7 +32,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -48,7 +48,7 @@ export default {
   padding: 0 1em;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
-  background-color: var(--button-bg);
+  background: var(--button-bg);
   display: inline-flex;
   justify-content: center;
   align-items: center;
