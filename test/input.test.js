@@ -10,9 +10,10 @@ describe('Input', () => {
     it('Input存在', () => {
         expect(Input).to.exist
     })
-    const Constructor = Vue.extend(Input)
-    let vm
+
     describe('测试props', () => {
+        const Constructor = Vue.extend(Input)
+        let vm
         afterEach(() => {
             vm.$destroy()
         })
@@ -54,6 +55,22 @@ describe('Input', () => {
         })
     })
     describe('测试事件', () => {
-        it('change事件', () => { })
+        const Constructor = Vue.extend(Input)
+        let vm
+        afterEach(() => {
+            vm.$destroy()
+        })
+
+        it('change/input/focus/blur事件', () => {
+            ['change', 'input', 'focus', 'blur'].forEach(eventName, () => {
+                vm = new Constructor({}).$mount()
+                const inputElement = vm.$el.querySelector('input')
+                const callback = sinon.fake()
+                vm.$on(eventName, callback)
+                const event = new Event(eventName)
+                inputElement.dispatchEvent(event)
+                expect(callback).to.have.been.calledWith(event)
+            })
+        })
     })
 })
