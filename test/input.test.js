@@ -55,21 +55,17 @@ describe('Input', () => {
         })
     })
     describe('测试事件', () => {
-        const Constructor = Vue.extend(Input)
-        let vm
-        afterEach(() => {
-            vm.$destroy()
-        })
-
         it('change/input/focus/blur事件', () => {
-            ['change', 'input', 'focus', 'blur'].forEach(eventName, () => {
-                vm = new Constructor({}).$mount()
+            ['change', 'input', 'focus', 'blur'].forEach((eventName) => {
+                const Constructor = Vue.extend(Input)
+                const vm = new Constructor({}).$mount()
                 const inputElement = vm.$el.querySelector('input')
                 const callback = sinon.fake()
                 vm.$on(eventName, callback)
                 const event = new Event(eventName)
                 inputElement.dispatchEvent(event)
                 expect(callback).to.have.been.calledWith(event)
+                vm.$destroy()
             })
         })
     })
