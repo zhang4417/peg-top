@@ -1,6 +1,16 @@
 <template>
   <div class="wrapper" :class="{error:error}">
-    <input type="text" :value="value" :disabled="disabled" :readonly="readonly" />
+    <input
+      type="text"
+      :value="value"
+      :disabled="disabled"
+      :readonly="readonly"
+      @change="$emit('change',$event)"
+      @input="$emit('input',$event)"
+      @focus="$emit('focus',$event)"
+      @blur="$emit('blur',$event)"
+    />
+    {{value}}
     <div class="error-content" v-if="error">
       <Icon name="error" fill="rgb(240, 71, 71)"></Icon>
       <span>{{error}}</span>
@@ -25,6 +35,11 @@ export default {
     },
     error: {
       type: String
+    }
+  },
+  watch: {
+    value() {
+      console.log(this.value);
     }
   }
 };

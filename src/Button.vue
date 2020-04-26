@@ -5,7 +5,7 @@
     @click="$emit('click')"
   >
     <p-icon class="p-icon" :name="icon" v-if="icon && !loading"></p-icon>
-    <p-icon class="loading g-icon" name="loading" v-if="loading"></p-icon>
+    <p-icon class="loading p-icon" name="loading" v-if="loading"></p-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -15,7 +15,7 @@
 <script>
 import Icon from "./Icon.vue";
 export default {
-  components: { "g-icon": Icon },
+  components: { "p-icon": Icon },
   props: {
     icon: {},
     loading: {
@@ -67,14 +67,14 @@ export default {
     > .content {
       order: 1;
     }
-    > .g-icon {
+    > .p-icon {
       order: 2;
       margin-right: 0;
       margin-left: 0.2em;
     }
   }
   &.icon-left {
-    > .g-icon {
+    > .p-icon {
       order: 1;
     }
     > .content {
