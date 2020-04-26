@@ -55,8 +55,8 @@ describe('Input', () => {
         })
     })
     describe('测试事件', () => {
-        it('change/input/focus/blur事件', () => {
-            ['change', 'input', 'focus', 'blur'].forEach((eventName) => {
+        it('change/focus/blur事件', () => {
+            ['change', 'focus', 'blur'].forEach((eventName) => {
                 const Constructor = Vue.extend(Input)
                 const vm = new Constructor({}).$mount()
                 const inputElement = vm.$el.querySelector('input')
@@ -67,6 +67,20 @@ describe('Input', () => {
                 expect(callback).to.have.been.calledWith(event)
                 vm.$destroy()
             })
+        })
+    })
+    describe('input事件', () => {
+        it('v-model双向绑定测试', () => {
+            const Constructor = Vue.extend(Input)
+            const vm = new Constructor({}).$mount()
+            const inputElement = vm.$el.querySelector('input')
+            const callback = sinon.fake()
+            vm.$on('input', callback)
+            const event = new Event('input')
+            Object.defineProperty(event, 'target', { value: { value: 'hello' }, enumerable: true })
+            inputElement.dispatchEvent(event)
+            expect(callback).to.have.been.calledWith('hello')
+            vm.$destroy()
         })
     })
 })
