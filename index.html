@@ -35,19 +35,26 @@
 
 <body>
     <div id="app">
-        <g-button :loading="loading1" @click="loading1=!loading1">
+        <p-input value="你好"></p-input>
+        <p-input value="你好" disabled></p-input>
+        <p-input value="你好" readonly></p-input>
+        <p-input value="你好" error="输入错误"></p-input>
+        <hr />
+
+
+        <p-button :loading="loading1" @click="loading1=!loading1">
             <span>按钮</span>
-        </g-button>
-        <g-button icon="setting" icon-position="left" :loading="loading2" @click="loading2=!loading2">
+        </p-button>
+        <p-button icon="setting" icon-position="left" :loading="loading2" @click="loading2=!loading2">
             <span>按钮</span>
-        </g-button>
-        <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
+        </p-button>
+        <p-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
             <span>按钮</span>
-        </g-button>
+        </p-button>
         <button-group>
-            <g-button icon="left">上一页</g-button>
-            <g-button>当前页</g-button>
-            <g-button icon="right" icon-position="right">下一页</g-button>
+            <p-button icon="left">上一页</p-button>
+            <p-button>当前页</p-button>
+            <p-button icon="right" icon-position="right">下一页</p-button>
         </button-group>
     </div>
 

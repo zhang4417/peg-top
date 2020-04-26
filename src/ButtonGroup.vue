@@ -11,7 +11,7 @@ export default {
       let name = node.nodeName.toLowerCase();
       if (name !== "button") {
         console.warn(
-          `<button-group>里最好只能有<g-button>，你在这里用了<${name}>`
+          `<button-group>里最好只能有<p-button>，你在这里用了<${name}>`
         );
       }
     }
@@ -23,7 +23,7 @@ export default {
 .group {
   display: inline-flex;
   vertical-align: middle;
-  > .g-button {
+  > .p-button {
     border-radius: 0;
 
     &:not(:first-child) {

@@ -1,11 +1,11 @@
 <template>
   <button
-    class="g-button"
+    class="p-button"
     :class=" {[`icon-${iconPosition}`]: icon ? true : false} "
     @click="$emit('click')"
   >
-    <g-icon class="g-icon" :name="icon" v-if="icon && !loading"></g-icon>
-    <g-icon class="loading g-icon" name="loading" v-if="loading"></g-icon>
+    <p-icon class="p-icon" :name="icon" v-if="icon && !loading"></p-icon>
+    <p-icon class="loading g-icon" name="loading" v-if="loading"></p-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -42,7 +42,7 @@ export default {
   }
 }
 
-.g-button {
+.p-button {
   font-size: var(--font-size);
   height: var(--button-height);
   padding: 0 1em;
@@ -56,7 +56,7 @@ export default {
   .loading {
     animation: spin 1s infinite linear;
   }
-  .g-icon {
+  .p-icon {
     order: 1;
     margin-right: 0.2em;
   }
