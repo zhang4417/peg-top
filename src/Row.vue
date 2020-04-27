@@ -1,8 +1,6 @@
 <template>
-  <div :style="{marginRight:'-'+gap}">
-    <div class="row">
-      <slot></slot>
-    </div>
+  <div class="row" :style="rowStyle">
+    <slot></slot>
   </div>
 </template>
 
@@ -15,10 +13,15 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$children);
     this.$children.forEach(vm => {
       vm.gap = this.gap;
     });
+  },
+  computed: {
+    rowStyle() {
+      let { gap } = this;
+      return { marginLeft: "-" + gap };
+    }
   }
 };
 </script>

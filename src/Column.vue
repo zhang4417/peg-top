@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="col"
-    :class="[span && `col-${span}`,space && `right-${space}`]"
-    :style="{marginRight:gap}"
-  >
+  <div class="col" :class="colClass" :style="colStyle">
     <slot></slot>
   </div>
 </template>
@@ -15,12 +11,22 @@ export default {
     span: {
       type: [String, Number]
     },
-    space: {
+    rights: {
       type: [String, Number]
     }
   },
   data() {
     return { gap: "0px" };
+  },
+  computed: {
+    colStyle() {
+      let { gap } = this;
+      return { marginLeft: gap };
+    },
+    colClass() {
+      let { span, rights } = this;
+      return [span && `col-${span}`, rights && `right-${rights}`];
+    }
   }
 };
 </script>
