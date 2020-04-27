@@ -13,6 +13,9 @@ export default {
     },
     rights: {
       type: [String, Number]
+    },
+    align: {
+      type: String
     }
   },
   data() {
@@ -24,8 +27,12 @@ export default {
       return { marginLeft: gap };
     },
     colClass() {
-      let { span, rights } = this;
-      return [span && `col-${span}`, rights && `right-${rights}`];
+      let { span, rights, align } = this;
+      return [
+        span && `col-${span}`,
+        rights && `right-${rights}`,
+        align && `align-${align}`
+      ];
     }
   }
 };
@@ -35,7 +42,7 @@ export default {
 .col {
   height: 100px;
   width: 50%;
-  border: 1px solid red;
+  border: 1px solid #bbb;
 
   @for $n from 1 through 24 {
     &.col-#{$n} {
@@ -46,6 +53,17 @@ export default {
     &.right-#{$n} {
       margin-right: $n/24 * 100%;
     }
+  }
+
+  display: flex;
+  &.align-left {
+    justify-content: flex-start;
+  }
+  &.align-center {
+    justify-content: center;
+  }
+  &.align-right {
+    justify-content: flex-end;
   }
 }
 </style>
