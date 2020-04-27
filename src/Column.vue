@@ -11,11 +11,24 @@ export default {
     span: {
       type: [String, Number]
     },
-    rights: {
+    offset: {
       type: [String, Number]
     },
     align: {
       type: String
+    },
+    ipad: {
+      type: Object,
+      validator(value) {
+        let keys = Object.keys(value);
+        let valid = true;
+        keys.forEach(key => {
+          if (!["span", "offset"].includes(key)) {
+            valid = false;
+          }
+        });
+        return valid;
+      }
     }
   },
   data() {
@@ -27,11 +40,13 @@ export default {
       return { marginLeft: gap };
     },
     colClass() {
-      let { span, rights, align } = this;
+      let { span, offset, align, ipad } = this;
       return [
-        span && `col-${span}`,
-        rights && `right-${rights}`,
-        align && `align-${align}`
+        span && `span-${span}`,
+        offset && `offset-${offset}`,
+        align && `align-${align}`,
+        ipad && ipad.span && `ipad-span-${ipad.span}`,
+        ipad && ipad.offset && `ipad-offset-${ipad.offset}`
       ];
     }
   }
@@ -45,16 +60,27 @@ export default {
   border: 1px solid #bbb;
 
   @for $n from 1 through 24 {
-    &.col-#{$n} {
+    &.span-#{$n} {
       width: $n/24 * 100%;
     }
   }
   @for $n from 1 through 24 {
-    &.right-#{$n} {
+    &.offset-#{$n} {
       margin-right: $n/24 * 100%;
     }
   }
-
+  @media (min-width: 576px) {
+    @for $n from 1 through 24 {
+      &.ipad-span-#{$n} {
+        width: $n/24 * 100%;
+      }
+    }
+    @for $n from 1 through 24 {
+      &.ipad-offset-#{$n} {
+        margin-right: $n/24 * 100%;
+      }
+    }
+  }
   display: flex;
   &.align-left {
     justify-content: flex-start;
