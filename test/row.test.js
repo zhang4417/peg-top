@@ -24,13 +24,14 @@ describe('Row', () => {
                     <p-col span="12">2</p-col>
                 </p-row>
             `
-        const vm = new Vue({}).$mount('div')
+        const vm = new Vue().$mount('div')
         setTimeout(() => {
-            expect(getComputedStyle(vm.$el.querySelector('.row')).marginLeft).to.eq('-10px')
+            const row = vm.$el.querySelector('.row')
+            expect(getComputedStyle(row).marginLeft).to.eq('-10px')
             expect(getComputedStyle(vm.$el.querySelector('.col')).marginLeft).to.eq('10px')
             done()
+            vm.$el.remove()
+            vm.$destroy()
         })
-        vm.$el.remove()
-        vm.$destroy()
     })
 })

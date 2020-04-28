@@ -14,7 +14,6 @@ export default {
   },
   created() {},
   mounted() {
-    console.log(getComputedStyle(this.$el).marginLeft);
     this.$children.forEach(vm => {
       vm.gap = this.gap;
     });
