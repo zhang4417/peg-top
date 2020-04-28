@@ -27,6 +27,7 @@ export default {
     align: {
       type: String
     },
+    justify: { type: String },
     ipad: {
       type: Object,
       validator
@@ -63,11 +64,22 @@ export default {
       return { marginLeft: gap };
     },
     colClass() {
-      let { addClass, span, offset, align, ipad, spc, mpc, lpc } = this;
+      let {
+        addClass,
+        span,
+        offset,
+        align,
+        justify,
+        ipad,
+        spc,
+        mpc,
+        lpc
+      } = this;
       return [
         span && `span-${span}`,
         offset && `offset-${offset}`,
         align && `align-${align}`,
+        justify && `justify-${justify}`,
         ...addClass(ipad, "ipad"),
         ...addClass(spc, "spc"),
         ...addClass(mpc, "mpc"),
@@ -143,13 +155,22 @@ export default {
     }
   }
   display: flex;
-  &.align-left {
-    justify-content: flex-start;
+  &.align-start {
+    align-items: flex-start;
   }
   &.align-center {
+    align-items: center;
+  }
+  &.align-end {
+    align-items: flex-end;
+  }
+  &.justify-start {
+    justify-content: flex-start;
+  }
+  &.justify-center {
     justify-content: center;
   }
-  &.align-right {
+  &.justify-end {
     justify-content: flex-end;
   }
 }
