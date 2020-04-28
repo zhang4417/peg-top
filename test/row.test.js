@@ -30,5 +30,7 @@ describe('Row', () => {
             expect(getComputedStyle(vm.$el.querySelector('.col')).marginLeft).to.eq('10px')
             done()
         })
+        vm.$el.remove()
+        vm.$destroy()
     })
 })
