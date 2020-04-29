@@ -10,8 +10,10 @@ import Header from './Header.vue'
 import Aside from './Aside.vue'
 import Content from './Content.vue'
 import Footer from './Footer.vue'
+
 import '../test.js'
 import './svg.js'
+import plugin from './plugin.js'
 
 Vue.component('p-button', Button)
 Vue.component('p-icon', Icon)
@@ -24,6 +26,8 @@ Vue.component('p-header', Header)
 Vue.component('p-aside', Aside)
 Vue.component('p-content', Content)
 Vue.component('p-footer', Footer)
+Vue.use(plugin)
+
 new Vue({
     el: '#app',
     data: {
@@ -35,6 +39,9 @@ new Vue({
     methods: {
         onchange(e) {
             console.log(e.target.value)
+        },
+        showToast() {
+            this.$toast('你好啊，朋友！')
         }
     }
 })
