@@ -16,20 +16,21 @@ export default {
   name: "Toast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    closeDelay: {
-      type: Number,
-      default: 3
+      type: [Boolean, Number],
+      default: 1,
+      validator(value) {
+        return value === false || typeof value === "number";
+      }
     },
     closeButton: {
       type: Object,
-      default: {
-        text: "关闭",
-        callback() {
-          console.log("执行该回调");
-        }
+      default() {
+        return {
+          text: "关闭",
+          callback() {
+            console.log("执行该回调");
+          }
+        };
       }
     },
     position: {
@@ -47,16 +48,15 @@ export default {
     }
   },
   mounted() {
-    if (this.autoClose === true) {
+    if (this.autoClose) {
       setTimeout(() => {
         this.close();
-      }, this.closeDelay * 1000);
+      }, this.autoClose * 1000);
     }
     this.$nextTick(() => {
       this.$refs.line.style.height = `${
         this.$refs.toast.getBoundingClientRect().height
       }px`;
-      console.log(this.$refs.toast.getBoundingClientRect().left);
     });
   },
   methods: {
