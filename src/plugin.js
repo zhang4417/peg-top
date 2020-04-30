@@ -10,6 +10,7 @@ export default {
             toast = new Constructor(toastOptions)
             toast.$slots.default = message
             toast.$mount()
+            toast.$on('close', () => { toast = null })
             document.body.appendChild(toast.$el)
             return toast
         }
