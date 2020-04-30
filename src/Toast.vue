@@ -1,11 +1,13 @@
 <template>
-  <div class="toast" :class="toastClass" ref="toast">
-    <div class="content">
-      <slot v-if="!enableHtml"></slot>
-      <div v-else v-html="$slots.default"></div>
+  <div class="wrapper" :class="toastClass">
+    <div class="toast" ref="toast">
+      <div class="content">
+        <slot v-if="!enableHtml"></slot>
+        <div v-else v-html="$slots.default"></div>
+      </div>
+      <div v-if="closeButton" class="line" ref="line"></div>
+      <div v-if="closeButton" @click="onCloseButton" class="closeButton">{{closeButton.text}}</div>
     </div>
-    <div v-if="closeButton" class="line" ref="line"></div>
-    <div v-if="closeButton" @click="onCloseButton" class="closeButton">{{closeButton.text}}</div>
   </div>
 </template>
 
@@ -72,9 +74,67 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$animation-duration: 0.3s;
+.wrapper {
+  position: fixed;
+  left: 50%;
+  &.position-top {
+    top: 0;
+    transform: translateX(-50%);
+    > .toast {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      animation: slide-down $animation-duration linear;
+    }
+  }
+  &.position-middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    > .toast {
+      animation: fade-in $animation-duration linear;
+    }
+  }
+  &.position-bottom {
+    bottom: 0;
+    transform: translateX(-50%);
+    > .toast {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      animation: slide-up $animation-duration linear;
+    }
+  }
+}
 $font-size: 14px;
 $background-color: rgba(0, 0, 0, 0.7);
 $height: 40px;
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 .toast {
   background: $background-color;
   color: white;
@@ -83,7 +143,6 @@ $height: 40px;
   line-height: 1.8;
   border-radius: 4px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-  position: fixed;
   display: flex;
   align-items: center;
   > .content {
@@ -96,25 +155,6 @@ $height: 40px;
   > .closeButton {
     cursor: pointer;
     padding: 8px 8px;
-  }
-  &.position-top {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  &.position-middle {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  &.position-bottom {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
   }
 }
 </style>

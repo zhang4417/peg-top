@@ -40,14 +40,23 @@ new Vue({
         onchange(e) {
             console.log(e.target.value)
         },
-        showToast() {
+        showToast(position) {
             this.$toast('你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊，朋友！', {
                 propsData: {
                     closeButton: { text: 'Yes', callback() { console.log('执行了') } },
                     autoClose: false,
-                    position: 'bottom'
+                    position: position
                 }
             })
+        },
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('middle')
+        },
+        showToast3() {
+            this.showToast('bottom')
         }
     }
 })
