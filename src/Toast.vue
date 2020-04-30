@@ -1,7 +1,8 @@
 <template>
   <div class="toast" :class="toastClass" ref="toast">
     <div class="content">
-      <slot></slot>
+      <slot v-if="!enableHtml"></slot>
+      <div v-else v-html="$slots.default"></div>
     </div>
     <div v-if="closeButton" class="line" ref="line"></div>
     <div v-if="closeButton" @click="onCloseButton" class="closeButton">{{closeButton.text}}</div>
@@ -32,6 +33,10 @@ export default {
     position: {
       type: String,
       default: "top"
+    },
+    enableHtml: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

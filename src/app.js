@@ -41,7 +41,7 @@ new Vue({
             console.log(e.target.value)
         },
         showToast() {
-            this.$toast('你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊！', {
+            this.$toast('你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊，朋友！', {
                 propsData: {
                     closeButton: { text: 'Yes', callback() { console.log('执行了') } },
                     autoClose: false,
