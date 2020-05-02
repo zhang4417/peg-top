@@ -45,9 +45,22 @@
 
 <body>
     <div id="app">
-        <p-button @click="showToast1">点我</p-button>
-        <p-button @click="showToast2">点我</p-button>
-        <p-button @click="showToast3">点我</p-button>
+        <p-tab :selected.sync="selectedTab" direction="vertical">
+            <p-head>
+                <p-item name="math">数学</p-item>
+                <p-item name="sports" :disabled="true">体育</p-item>
+                <p-item name="arts">美术</p-item>
+                <template v-slot:switch>切换</template>
+            </p-head>
+            <p-body>
+                <p-pane name="math">Math</p-pane>
+                <p-pane name="sports">Sports</p-pane>
+                <p-pane name="arts">Arts</p-pane>
+            </p-body>
+        </p-tab>
+        <!-- <p-button @click="showToast1">Top</p-button>
+        <p-button @click="showToast2">Middle</p-button>
+        <p-button @click="showToast3">Bottom</p-button> -->
         <!-- <p-layout class="layout">
             <p-aside class="demo">aside</p-aside>
             <p-layout>

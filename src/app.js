@@ -10,6 +10,11 @@ import Header from './Header.vue'
 import Aside from './Aside.vue'
 import Content from './Content.vue'
 import Footer from './Footer.vue'
+import Tab from './Tab.vue'
+import Head from './Head.vue'
+import Body from './Body.vue'
+import Item from './Item.vue'
+import Pane from './Pane.vue'
 
 import '../test.js'
 import './svg.js'
@@ -26,6 +31,11 @@ Vue.component('p-header', Header)
 Vue.component('p-aside', Aside)
 Vue.component('p-content', Content)
 Vue.component('p-footer', Footer)
+Vue.component('p-tab', Tab)
+Vue.component('p-head', Head)
+Vue.component('p-body', Body)
+Vue.component('p-item', Item)
+Vue.component('p-pane', Pane)
 Vue.use(plugin)
 
 new Vue({
@@ -34,7 +44,8 @@ new Vue({
         loading1: false,
         loading2: false,
         loading3: false,
-        value: 'hi'
+        value: 'hi',
+        selectedTab: 'math'
     },
     methods: {
         onchange(e) {
@@ -58,6 +69,9 @@ new Vue({
         showToast3() {
             this.showToast('bottom')
         }
+    },
+    mounted() {
+        console.log(this.selectedTab)
     }
 })
 
