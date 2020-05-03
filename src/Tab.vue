@@ -25,10 +25,18 @@ export default {
     return { eventBus: new Vue() };
   },
   provide() {
-    return { eventBus: this.eventBus,direction:this.direction };
+    return { eventBus: this.eventBus, direction: this.direction };
   },
   mounted() {
-    this.eventBus.$emit("update:selected", this.selected);
+    this.$children.forEach(item => {
+      if (item.$options.name === "Head") {
+        item.$children.forEach(vm => {
+          if (vm.$options.name === "Item" && vm.name === this.selected) {
+            this.eventBus.$emit("update:selected", this.selected, vm);
+          }
+        });
+      }
+    });
   }
 };
 </script>

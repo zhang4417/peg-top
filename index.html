@@ -45,7 +45,7 @@
 
 <body>
     <div id="app">
-        <p-tab :selected.sync="selectedTab" direction="vertical">
+        <p-tab :selected.sync="selectedTab" direction="horizontal">
             <p-head>
                 <p-item name="math">数学</p-item>
                 <p-item name="sports" :disabled="true">体育</p-item>
@@ -58,6 +58,7 @@
                 <p-pane name="arts">Arts</p-pane>
             </p-body>
         </p-tab>
+
         <!-- <p-button @click="showToast1">Top</p-button>
         <p-button @click="showToast2">Middle</p-button>
         <p-button @click="showToast3">Bottom</p-button> -->

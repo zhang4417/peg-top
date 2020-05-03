@@ -31,20 +31,31 @@ export default {
       this.active = name === this.name;
     });
   },
+  mounted() {
+    if (this.disabled === true) {
+      this.$el.style.cursor = "not-allowed";
+    }
+  },
   methods: {
     xxx() {
-      if (this.disabled === false)
-        this.eventBus.$emit("update:selected", this.name);
+      if (this.disabled === false) {
+        this.eventBus.$emit("update:selected", this.name, this);
+      }
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+$selected-color: blue;
 .item {
-  border: 1px solid black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  cursor: pointer;
   &.item-active {
-    background: red;
+    color: $selected-color;
   }
   &.item-disabled {
     background: #fff;
