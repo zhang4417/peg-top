@@ -34,19 +34,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$height: 40px;
+$distance: 40px;
 $selected-color: blue;
 .head {
-  height: $height;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   position: relative;
   &.head-horizontal {
     flex-direction: column;
+    border-right: 1px solid grey;
   }
   &.head-vertical {
     flex-direction: row;
+    border-bottom: 1px solid grey;
+    height: $distance;
   }
   > .line {
     position: absolute;
@@ -62,6 +64,8 @@ $selected-color: blue;
   }
   > .switch {
     cursor: pointer;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
     &.switch-vertical {
       margin-left: auto;
     }

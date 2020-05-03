@@ -43,12 +43,11 @@ export default {
 
 <style lang="scss" scoped>
 .tab {
+  display: flex;
   &.tab-vertical {
-    display: flex;
     flex-direction: column;
   }
   &.tab-horizontal {
-    display: flex;
     flex-direction: row;
   }
 }

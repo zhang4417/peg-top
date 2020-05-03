@@ -52,7 +52,7 @@ $selected-color: blue;
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 1em;
+  padding: 0.5em 1em;
   cursor: pointer;
   &.item-active {
     color: $selected-color;

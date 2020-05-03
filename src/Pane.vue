@@ -26,7 +26,4 @@ export default {
 </script>
 
 <style lamg="scss" scoped>
-.active {
-  background: red;
-}
 </style>
