@@ -1,5 +1,5 @@
 <template>
-  <div @click="xxx" :class="addClass" class="item">
+  <div @click="xxx" :class="addClass" class="item" :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -27,9 +27,11 @@ export default {
     }
   },
   created() {
-    this.eventBus.$on("update:selected", name => {
-      this.active = name === this.name;
-    });
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", name => {
+        this.active = name === this.name;
+      });
+    }
   },
   mounted() {
     if (this.disabled === true) {
@@ -39,7 +41,9 @@ export default {
   methods: {
     xxx() {
       if (this.disabled === false) {
-        this.eventBus.$emit("update:selected", this.name, this);
+        this.eventBus&&this.eventBus.$emit("update:selected", this.name, this);
+      }else{
+        this.$emit('click',this)
       }
     }
   }
