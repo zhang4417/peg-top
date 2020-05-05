@@ -45,7 +45,13 @@
 
 <body>
     <div id="app">
-        <p-tab :selected.sync="selectedTab" direction="vertical">
+        <div style="margin-top:100px;">
+            <p-popover>
+                <template v-slot:content>我是popover</template>
+                <button>点击</button>
+            </p-popover>
+        </div>
+        <!-- <p-tab :selected.sync="selectedTab" direction="vertical">
             <p-head>
                 <p-item name="math">数学</p-item>
                 <p-item name="sports" :disabled="true">体育</p-item>
@@ -59,8 +65,7 @@
                 <p-pane name="sports">Sports</p-pane>
                 <p-pane name="arts">Arts</p-pane>
             </p-body>
-        </p-tab>
-
+        </p-tab> -->
         <!-- <p-button @click="showToast1">Top</p-button>
         <p-button @click="showToast2">Middle</p-button>
         <p-button @click="showToast3">Bottom</p-button> -->

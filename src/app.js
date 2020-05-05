@@ -15,6 +15,7 @@ import Head from './Head.vue'
 import Body from './Body.vue'
 import Item from './Item.vue'
 import Pane from './Pane.vue'
+import Popover from './Popover.vue'
 
 import '../test.js'
 import './svg.js'
@@ -36,6 +37,7 @@ Vue.component('p-head', Head)
 Vue.component('p-body', Body)
 Vue.component('p-item', Item)
 Vue.component('p-pane', Pane)
+Vue.component('p-popover', Popover)
 Vue.use(plugin)
 
 new Vue({
@@ -54,7 +56,12 @@ new Vue({
         showToast(position) {
             this.$toast('你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊，朋友！你好啊，朋友！', {
                 propsData: {
-                    closeButton: { text: 'Yes', callback() { console.log('执行了') } },
+                    closeButton: {
+                        text: 'Yes',
+                        callback() {
+                            console.log('执行了')
+                        }
+                    },
                     autoClose: false,
                     position: position
                 }
@@ -74,4 +81,3 @@ new Vue({
         console.log(this.selectedTab)
     }
 })
-
