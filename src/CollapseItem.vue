@@ -14,6 +14,9 @@ export default {
     tittle: {
       type: String,
       required: true
+    },
+    name: {
+      type: String
     }
   },
   data() {
@@ -22,8 +25,10 @@ export default {
   inject: ["eventBus"],
   mounted() {
     this.eventBus &&
-      this.eventBus.$on("update:selected", vm => {
-        if (vm !== this) {
+      this.eventBus.$on("update:selected", selected => {
+        if (selected.indexOf(this.name) > -1) {
+          this.open();
+        } else {
           this.close();
         }
       });
@@ -37,11 +42,10 @@ export default {
     },
     toggle() {
       if (this.visible) {
-        this.close();
+        this.eventBus.$emit("update:removeName", this.name);
       } else {
-        this.open();
+        this.eventBus && this.eventBus.$emit("update:addName", this.name);
       }
-      this.eventBus && this.eventBus.$emit("update:selected", this);
     }
   }
 };

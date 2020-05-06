@@ -45,10 +45,10 @@
 
 <body>
     <div id="app">
-        <p-collapse single>
-            <p-coll-item tittle="大哥">刘备</p-coll-item>
-            <p-coll-item tittle="二哥">关羽</p-coll-item>
-            <p-coll-item tittle="三弟">张飞</p-coll-item>
+        <p-collapse :selected.sync="selectedArray" single>
+            <p-coll-item tittle="大哥" name="1">刘备</p-coll-item>
+            <p-coll-item tittle="二哥" name="2">关羽</p-coll-item>
+            <p-coll-item tittle="三弟" name="3">张飞</p-coll-item>
         </p-collapse>
         <!-- <div style="margin-top:100px;">
             <p-popover>

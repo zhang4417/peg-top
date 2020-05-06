@@ -51,7 +51,8 @@ new Vue({
         loading2: false,
         loading3: false,
         value: 'hi',
-        selectedTab: 'math'
+        selectedTab: 'math',
+        selectedArray: ['1']
     },
     methods: {
         onchange(e) {
@@ -82,6 +83,11 @@ new Vue({
         }
     },
     mounted() {
-        console.log(this.selectedTab)
+        console.log(this.selectedArray)
+    },
+    watch: {
+        selectedArray() {
+            console.log(this.selectedArray)
+        }
     }
 })
