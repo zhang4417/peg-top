@@ -1,6 +1,6 @@
 <template>
   <div class="collapseItem">
-    <div class="tittle" @click="visible=!visible">{{tittle}}</div>
+    <div class="tittle" @click="toggle">{{tittle}}</div>
     <div class="content" v-if="visible">
       <slot></slot>
     </div>
@@ -18,6 +18,31 @@ export default {
   },
   data() {
     return { visible: false };
+  },
+  inject: ["eventBus"],
+  mounted() {
+    this.eventBus &&
+      this.eventBus.$on("update:selected", vm => {
+        if (vm !== this) {
+          this.close();
+        }
+      });
+  },
+  methods: {
+    open() {
+      this.visible = true;
+    },
+    close() {
+      this.visible = false;
+    },
+    toggle() {
+      if (this.visible) {
+        this.close();
+      } else {
+        this.open();
+      }
+      this.eventBus && this.eventBus.$emit("update:selected", this);
+    }
   }
 };
 </script>

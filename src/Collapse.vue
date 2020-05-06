@@ -5,13 +5,22 @@
 </template>
 
 <script>
+import Vue from "vue";
 export default {
-  name: "Collapse"
+  name: "Collapse",
+  data() {
+    return { eventBus: new Vue() };
+  },
+  props: {
+    single: { type: Boolean, default: false }
+  },
+  provide() {
+    if (!this.single) {
+      return { eventBus: this.eventBus };
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.collapse {
-  //   border: 1px solid #ddd;
-}
 </style>
