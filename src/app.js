@@ -16,6 +16,8 @@ import Body from './Body.vue'
 import Item from './Item.vue'
 import Pane from './Pane.vue'
 import Popover from './Popover.vue'
+import Collapse from './Collapse.vue'
+import CollapseItem from './CollapseItem.vue'
 
 import '../test.js'
 import './svg.js'
@@ -38,6 +40,8 @@ Vue.component('p-body', Body)
 Vue.component('p-item', Item)
 Vue.component('p-pane', Pane)
 Vue.component('p-popover', Popover)
+Vue.component('p-collapse', Collapse)
+Vue.component('p-coll-item', CollapseItem)
 Vue.use(plugin)
 
 new Vue({
