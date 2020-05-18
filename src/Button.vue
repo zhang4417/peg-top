@@ -2,7 +2,7 @@
   <button
     class="p-button"
     :class=" {[`icon-${iconPosition}`]: icon ? true : false} "
-    @click="$emit('click')"
+    @click="onClick"
   >
     <p-icon class="p-icon" :name="icon" v-if="icon && !loading"></p-icon>
     <p-icon class="loading p-icon" name="loading" v-if="loading"></p-icon>
@@ -29,6 +29,12 @@ export default {
         return value === "left" || value === "right";
       }
     }
+  },
+  methods: {
+    onClick() {
+      let loadingCopy = !this.loading;
+      this.$emit("update:loading", loadingCopy);
+    }
   }
 };
 </script>
@@ -41,14 +47,22 @@ export default {
     transform: rotate(360deg);
   }
 }
+$button-height: 32px;
+$font-size: 14px;
+$button-bg: white;
+$button-active-bg: #eee;
+$border-radius: 4px;
+$color: #333;
+$border-color: #999;
+$border-color-hover: #666;
 
 .p-button {
-  font-size: var(--font-size);
-  height: var(--button-height);
+  font-size: $font-size;
+  height: $button-height;
   padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background: $button-bg;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -85,10 +99,10 @@ export default {
     outline: none;
   }
   &:hover {
-    border-color: var(--border-color-hover);
+    border-color: $border-color-hover;
   }
   &:active {
-    background: var(--button-active-bg);
+    background: $button-active-bg;
   }
 }
 </style>
