@@ -1,5 +1,6 @@
 module.exports = {
     title: 'Peg-Top',
+    base: "/peg-top/",
     description: '一个简易的Vue UI',
     themeConfig: {
         nav: [
