@@ -34,6 +34,7 @@ export default {
     onClick() {
       let loadingCopy = !this.loading;
       this.$emit("update:loading", loadingCopy);
+      this.$emit('click',this)
     }
   }
 };

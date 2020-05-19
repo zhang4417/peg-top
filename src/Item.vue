@@ -1,5 +1,5 @@
 <template>
-  <div @click="xxx" :class="addClass" class="item" :data-name="name">
+  <div @click="onClick" :class="addClass" class="item" :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
     }
   },
   methods: {
-    xxx() {
+    onClick() {
       if (this.disabled === false) {
         this.eventBus&&this.eventBus.$emit("update:selected", this.name, this);
       }else{
