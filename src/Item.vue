@@ -41,9 +41,10 @@ export default {
   methods: {
     onClick() {
       if (this.disabled === false) {
-        this.eventBus&&this.eventBus.$emit("update:selected", this.name, this);
-      }else{
-        this.$emit('click',this)
+        this.eventBus &&
+          this.eventBus.$emit("update:selected", this.name, this);
+      } else {
+        this.$emit("click", this);
       }
     }
   }
@@ -62,7 +63,6 @@ $selected-color: blue;
     color: $selected-color;
   }
   &.item-disabled {
-    background: #fff;
     color: #ddd;
   }
 }

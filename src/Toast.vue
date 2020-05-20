@@ -81,6 +81,7 @@ $animation-duration: 0.3s;
   &.position-top {
     top: 0;
     transform: translateX(-50%);
+    z-index: 21; //由于展示到vuepress时，自带的nav有一个z-index:20;所以这里加了一个z-index:21;
     > .toast {
       border-top-left-radius: 0;
       border-top-right-radius: 0;

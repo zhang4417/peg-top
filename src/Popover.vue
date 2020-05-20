@@ -102,18 +102,18 @@ export default {
       } = triggerWrapper.getBoundingClientRect();
       const { height: height2 } = contentWrapper.getBoundingClientRect();
       let positions = {
-        top: { top: top + window.scrollY, left: left + window.scrollX },
+        top: { top: top + window.scrollY, left: left + window.pageXOffset },
         bottom: {
           top: top + height + window.scrollY,
-          left: left + window.scrollX
+          left: left + window.pageXOffset
         },
         left: {
           top: top + window.scrollY + (height - height2) / 2,
-          left: left + window.scrollX
+          left: left + window.pageXOffset
         },
         right: {
           top: top + window.scrollY + (height - height2) / 2,
-          left: left + window.scrollX + width
+          left: left + window.pageXOffset + width
         }
       };
       contentWrapper.style.left = positions[this.position].left + "px";
@@ -225,6 +225,7 @@ $border-radius: 4px;
   &.position-left {
     transform: translateX(-100%);
     margin-left: -10px;
+    z-index: 11;
     &::before,
     &::after {
       transform: translateY(-50%);

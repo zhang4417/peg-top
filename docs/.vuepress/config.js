@@ -19,7 +19,7 @@ module.exports = {
             },
             {
                 title: '组件',
-                children: ['/components/button.md', '/components/input.md']
+                children: ['/components/button.md', '/components/buttonGroup.md', '/components/input.md', '/components/icon.md', '/components/grid.md', '/components/layout.md', '/components/tab.md', '/components/toast.md', '/components/collapse.md', './components/popover.md']
             }
         ]
     }

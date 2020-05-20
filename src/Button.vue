@@ -34,7 +34,7 @@ export default {
     onClick() {
       let loadingCopy = !this.loading;
       this.$emit("update:loading", loadingCopy);
-      this.$emit('click',this)
+      this.$emit("click", this);
     }
   }
 };
@@ -50,8 +50,8 @@ export default {
 }
 $button-height: 32px;
 $font-size: 14px;
-$button-bg: white;
-$button-active-bg: #eee;
+$button-bg: #c36eff;
+$button-active-bg: #8c56b3;
 $border-radius: 4px;
 $color: #333;
 $border-color: #999;
@@ -59,6 +59,7 @@ $border-color-hover: #666;
 
 .p-button {
   font-size: $font-size;
+  color: $color;
   height: $button-height;
   padding: 0 1em;
   border-radius: $border-radius;

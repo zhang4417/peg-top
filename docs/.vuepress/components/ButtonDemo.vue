@@ -30,9 +30,6 @@ export default {
         .replace(/\t+| +/g, "")
         .trim()
     };
-  },
-  mounted() {
-    console.log("出现了");
   }
 };
 </script>
