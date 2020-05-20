@@ -48,9 +48,11 @@ export default {
 <style lang="scss" scoped>
 $font-size: 14px;
 $border-color: #999;
+//$border-color: #c36eff;
 $border-radius: 4px;
-$border-color-hover: #666;
-$box-shadow-color: rgba(0, 0, 0, 0.5);
+//$border-color-hover: #666;
+$border-color-hover: #8c56b3;
+$box-shadow-color: #c36eff;
 $color: rgb(240, 71, 71);
 .wrapper {
   font-size: $font-size;
@@ -77,6 +79,10 @@ $color: rgb(240, 71, 71);
   &.error {
     input {
       border-color: $color;
+      &:focus {
+        outline: none;
+        box-shadow: inset 0 1px 2px rgba(255, 0, 0, 0.5);
+      }
     }
     .error-content {
       display: flex;

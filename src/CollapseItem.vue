@@ -52,6 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$title-background: #c36eff;
 .collapseItem {
   > .tittle {
     border: 1px solid #ddd;
@@ -59,6 +60,7 @@ export default {
     display: flex;
     align-items: center;
     margin-top: -1px;
+    background: $title-background;
   }
   &:first-child {
     > .tittle {

@@ -26,11 +26,12 @@ export default {
 
 <style lang="scss" scoped>
 .demo {
-  min-height: 100px;
+  min-height: 50px;
   border: 1px solid #bbb;
 }
 
 .layout {
-  height: 100vh;
+  height: 50vh;
+  color: #c36eff;
 }
 </style>

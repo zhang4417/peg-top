@@ -1,5 +1,9 @@
 # 折叠栏
 
 <ClientOnly>
-  <CollapseDemo/>
+  <CollapseDemo1/>
+</ClientOnly>
+
+<ClientOnly>
+  <CollapseDemo2/>
 </ClientOnly>

@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 $distance: 40px;
-$selected-color: blue;
+$selected-color: #c36eff;
 .head {
   display: flex;
   justify-content: flex-start;

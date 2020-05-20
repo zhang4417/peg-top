@@ -95,7 +95,8 @@ export default {
   height: 100px;
   width: 50%;
   border: 1px solid #bbb;
-
+  margin-bottom: 10px;
+  background: #c36eff;
   @for $n from 1 through 24 {
     &.span-#{$n} {
       width: $n/24 * 100%;

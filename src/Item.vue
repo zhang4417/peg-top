@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$selected-color: blue;
+$selected-color: #c36eff;
 .item {
   height: 100%;
   display: flex;
