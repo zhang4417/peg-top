@@ -1,6 +1,6 @@
 {
   "name": "peg-top-1-1",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "license": "MIT",
   "description": "这是一个Vue的UI框架",
