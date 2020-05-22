@@ -5,9 +5,9 @@ node_js:
   - "11"
   - "13"
 addons:
-  chrome:stable
+  - google-chrome-stable
 sudo:
   required
-before_scripts:
+before_script:
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
