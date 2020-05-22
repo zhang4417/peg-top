@@ -1,0 +1,14 @@
+test/
+index.html
+deploy.sh
+test.js
+src/
+docs/
+.cache/
+node_modules/
+karma.conf.js
+.travis.yml
+LICENSE
+README.md
+index.js
+package.json
