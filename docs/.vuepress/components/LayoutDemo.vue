@@ -8,6 +8,7 @@
         <p-footer class="demo">footer</p-footer>
       </p-layout>
     </p-layout>
+    <pre><code>{{content}}</code></pre>
   </div>
 </template>
 
@@ -20,6 +21,20 @@ export default {
     "p-header": Header,
     "p-content": Content,
     "p-footer": Footer
+  },
+  data() {
+    return {
+      content: `
+<p-layout>
+  <p-aside>aside</p-aside>
+  <p-layout>
+    <p-header>header</p-header>
+    <p-content>content</p-content>
+    <p-footer>footer</p-footer>
+  </p-layout>
+</p-layout>
+    `.trim()
+    };
   }
 };
 </script>

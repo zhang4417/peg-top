@@ -10,7 +10,6 @@
       @focus="$emit('focus',$event)"
       @blur="$emit('blur',$event)"
     />
-    {{value}}
     <div class="error-content" v-if="error">
       <Icon name="error" fill="rgb(240, 71, 71)"></Icon>
       <span>{{error}}</span>
