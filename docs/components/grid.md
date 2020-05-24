@@ -2,7 +2,7 @@
 title: grid-栅格
 ---
 # 栅格
-
+具有可控制宽度与间距的grid布局
 ## 代码演示
 <ClientOnly>
   <GridDemo/>

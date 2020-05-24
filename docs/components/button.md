@@ -3,7 +3,7 @@ title: button-按钮
 ---
 
 # 按钮
-具有button功能
+具有集button功能的组件
 ## 代码展示
 <ClientOnly>
   <ButtonDemo/>

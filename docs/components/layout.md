@@ -2,6 +2,7 @@
 title: layout-布局
 ---
 # Layout
+可变化的头部、侧边栏、内容和尾部布局
 ## 代码演示
 <ClientOnly>
   <LayoutDemo/>

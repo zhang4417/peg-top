@@ -2,7 +2,7 @@
 title: input-输入框
 ---
 # Input
-
+集禁用、只读和双向绑定的input输入框
 ## 代码演示
 <ClientOnly>
   <InputDemo/>

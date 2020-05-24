@@ -2,6 +2,7 @@
 title: collapse-折叠栏
 ---
 # 折叠栏
+具有单行折叠和多行折叠功能
 ## 代码展示
 单行折叠栏
 <ClientOnly>

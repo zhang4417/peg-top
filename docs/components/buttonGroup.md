@@ -2,7 +2,7 @@
 title: buttonGroup-按钮群
 ---
 # ButtonGroup
-
+一个集按钮组合的组件
 ## 代码展示
 <ClientOnly>
   <ButtonGroupDemo/>

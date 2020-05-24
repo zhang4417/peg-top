@@ -2,6 +2,7 @@
 title: tab-表格
 ---
 # Tab
+具有可控制横向和纵向的表格
 ## 代码演示
 <ClientOnly>
   <TabDemo/>

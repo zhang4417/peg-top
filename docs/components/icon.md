@@ -2,7 +2,7 @@
 title: icon-图标
 ---
 # Icon
-
+自动引入图标
 ## 代码演示
 <ClientOnly>
   <IconDemo/>
