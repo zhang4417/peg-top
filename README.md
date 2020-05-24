@@ -1,22 +1,4 @@
 ## 陀螺
+一款基于Vue的便捷UI框架
 
-1. 初始化
-~~~
-yarn init
-~~~
-
-2. 安装vue
-
-~~~
-yarn add vue
-~~~
-
-3. 安装parcel
-
-~~~
-yarn global add parcel-bundler 
-~~~
-4. 打包
-~~~
-parcel index.html --no-cache
-~~~
+[使用说明](https://zhanghang.monster/peg-top/) 

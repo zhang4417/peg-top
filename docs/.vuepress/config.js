@@ -5,7 +5,7 @@ module.exports = {
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/' },
+            { text: 'Origin', link: 'https://github.com/zhang4417/peg-top' },
             { text: 'External', link: 'https://google.com' }
         ],
         sidebar: [
